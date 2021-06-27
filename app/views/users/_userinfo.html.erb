@@ -5,7 +5,7 @@
     
     <%= form_with model:@user, local:true do |f| %>
     
-    <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+    <%#= attachment_image_tag @book.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
     
     <tr></tr>
       <tr>
@@ -22,7 +22,7 @@
   </table>
 　
   <div class="row">
-    <%= f.submit '',edit_user_path(current_user),class: "btn btn-outline-secondary btn-block fas fa-user-cog" %>
+    <%#= f.submit '',edit_user_path(user), class: "btn btn-outline-secondary btn-block fas fa-user-cog" %>
   </div>
   
   <% end %>
