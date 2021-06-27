@@ -1,0 +1,13 @@
+ 
+ 
+   <%= link_to books_path(user.id) do %>
+    <%= attachment_image_tag user, :image %>
+  <% end %>
+ 
+  <% if @book.user == current_user %>
+    <%= link_to "Destroy", book_path(@book), method: :delete %>
+  <% end %>
+  
+    <% if @book.user == current_user %>
+    <%= link_to "Edit", book_path(@book) %>
+  <% end %>

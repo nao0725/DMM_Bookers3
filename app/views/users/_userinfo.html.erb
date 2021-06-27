@@ -1,0 +1,28 @@
+
+<h2>User info</h2>
+ <table class="table">
+  <tbody>
+    
+    <%= form_with model:@user, local:true do |f| %>
+    
+    <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+    
+    <tr></tr>
+      <tr>
+	     <th>name</th>
+       <th>
+         <%= f.text_field :name %>
+       </th>
+      </tr>
+    <tr>
+	    <th>introduction</th>
+	    <th><%= f.text_area :introduction %></th>
+    </tr>
+  </tbody>
+  </table>
+　
+  <div class="row">
+    <%= f.submit '',edit_user_path(current_user),class: "btn btn-outline-secondary btn-block fas fa-user-cog" %>
+  </div>
+  
+  <% end %>
