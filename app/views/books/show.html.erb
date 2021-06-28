@@ -4,6 +4,42 @@
     <%= message %>
   <% end %>
 <% end %>
-
-<%= render 'users/userinfo', user: @user %>
-<%= render 'books/newbook', book: @book %>
+                  
+                      
+    <main>
+      <div class="container px-5 px-sm-0">
+        <div class="row">
+          <div class="col-md-3">
+          
+            <%= render 'users/userinfo', user: @book_detail.user %>
+            <%= render 'books/newbook', book: @book %>
+            
+          <div class="col-md-8 offset-md-1">
+           <h2>Book detail</h2>
+            <table class="table">
+             <tbody>
+               
+               <tr>
+                <td><%= link_to books_path(user.id) do %>
+                  <%= attachment_image_tag @book_detail.user, :profile_image,fallback: "no_image.jpg", size:'40x40' %><br>
+                  <%= link_to @book_detail.user.name, user_path(@book_detail.user.id)%>
+                <% end %></td>
+                
+                <td><%=link_to @book_detail.title ,book_path %></td>
+                <td><%= @book_detail.body%></td>
+                   
+                <% if @book_detail.user == current_user %>
+                  <%= link_to "Edit", edit_book_path(@book_detail), class:"btn btn-sm btn-secondary bg-success text-white" %>
+                <% end %>
+                
+                <% if @book_detail.user == current_user %>
+                  <%= link_to "Destroy", book_path(@book_detail), method: :delete, class: "btn btn-sm btn-secondary bg-danger text-white" ,"data-confirm" => "本当に削除しますか？"%>
+                <% end %>
+                </tr>
+                
+             </tbody>
+            </table>
+           </div>
+          </div>
+        </div>
+      </main>
