@@ -4,3 +4,32 @@
     <%= message %>
   <% end %>
 <% end %>
+
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+  		  <h1>Editing Book</h1>
+    	
+<%= form_with model:インスタンス変数, url:”リンク先”, *local*:*true* *do* |hoge（ブロック変数）| %> <% *end* %>
+ 		
+  <div class="form-group">
+    <label for="book_title">Title</label>
+    <%= text.field :title, class:"form-control book_title" %>
+  </div>
+  
+  <div class="form-group">
+    <label for="book_opinion">Opinion</label>
+    <%= text.field%>
+  </div>
+  
+  
+  <div class="form-group">
+    <input type="submit" name="commit" value="Update Book" class="btn btn-success" data-disable-with="Update Book">
+  </div>
+</form>
+  		<a class="book_1825" href="/books/1825">Show</a> |
+  		<a class="back" href="/books">Back</a>
+  </div>
+</div>
+      </div></main>
